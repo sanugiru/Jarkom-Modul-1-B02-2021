@@ -6,26 +6,58 @@
 - 05111940000158 	[Shahnaaz Anisa Firdaus](https://www.github.com/sanugiru)
 ## Soal 1
 Sebutkan web server yang digunakan pada "[ichimarumaru.tech](https://www.ichimarumaru.tech)"! 
+
 **Pembahasan:**
+- filter : http.host == ichimarumaru.tech 
+![filter](/screenshots/1-1.png)
+- TCP Stream
+<br>![WebServer](/screenshots/1-2.png)
+
 **Kendala:**
+Perlu mencari tahu apa yang dimaksud dengan web server dan filter yang tepat untuk mencarinya  
+
 ## Soal 2
 Temukan paket dari web-web yang menggunakan basic authentication method!
+
 **Pembahasan:**
+- filter : http.authbasic
+![filter](/screenshots/2-1.png)
+
 **Kendala:**
+Terdapat kendala dalam mendapatkan filter yang tepat
+
 ## Soal 3
 Ikuti perintah di basic.ichimarumaru.tech! Username dan password bisa didapatkan dari file .pcapng!
+
 **Pembahasan:**
-**Kendala:**
+- filter : http.authbasic
+![filter](/screenshots/3-1.png)
+- Sebutkan urutan konfigurasi pengkabelan T568A!
+![Jawab](/screenshots/3-2.png)
+
+**Kendala:** -
+
 ## Soal 4
 Temukan paket mysql yang mengandung perintah query select!
+
 **Pembahasan:**
+- filter : mysql.command == 3 and frame matches "select"
+![filter](/screenshots/4-1.png)
+
 **Kendala:**
+Terdapat kendala ketika mencari filter yang tepat
+
 ## Soal 5
 Login ke portal.ichimarumaru.tech kemudian ikuti perintahnya! Username dan password bisa didapat dari query insert pada table users dari file .pcap!  
 
 **Pembahasan:**  
+- filter : tcp contains password
+![filter](/screenshots/5-1.png)
+- Sebutkan urutan konfigurasi pengkabelan T568B!
+![Jawab](/screenshots/5-2.png)
 
-**Kendala:**
+**Kendala:** -
+
 ## Soal 6
 Cari username dan password ketika melakukan login ke FTP Server!  
 
