@@ -20,15 +20,22 @@ Temukan paket mysql yang mengandung perintah query select!
 **Pembahasan:**
 **Kendala:**
 ## Soal 5
-Login ke portal.ichimarumaru.tech kemudian ikuti perintahnya! Username dan password bisa didapat dari query insert pada table users dari file .pcap!
-**Pembahasan:**
+Login ke portal.ichimarumaru.tech kemudian ikuti perintahnya! Username dan password bisa didapat dari query insert pada table users dari file .pcap!  
+
+**Pembahasan:**  
+
 **Kendala:**
 ## Soal 6
-Cari username dan password ketika melakukan login ke FTP Server!
-**Pembahasan:**
-**Kendala:**
+Cari username dan password ketika melakukan login ke FTP Server!  
+
+**Pembahasan:**  
+- filter: ftp.request.command eq USER || ftp.request.command eq PASS  
+	![step1](/screenshots/6-1.png)  
+	
+**Kendala:** Sempat bingung mencari filternya
 ## Soal 7
 Ada 500 file zip yang disimpan ke FTP Server dengan nama 0.zip, 1.zip, 2.zip, ..., 499.zip. Simpan dan Buka file pdf tersebut. (Hint = nama pdf-nya "Real.pdf")
+
 **Pembahasan:**
 - filter: ftp-data contains Real.pdf
 	![step1](/screenshots/7-1.png)  
@@ -39,23 +46,20 @@ Ada 500 file zip yang disimpan ke FTP Server dengan nama 0.zip, 1.zip, 2.zip, ..
   ![step4](/screenshots/7-4.png)  
 - Isi dari Real.zip & Real.pdf
 	![isi-zip](/screenshots/7-5.png)  
-	![isi-pdf](/screenshots/7-6.png)  
+	![isi-pdf](/screenshots/7-6.png) 
+	
 **Kendala:** -
 ## Soal 8
-Cari paket yang menunjukan pengambilan file dari FTP tersebut!
+Cari paket yang menunjukan pengambilan file dari FTP tersebut!  
 
-**Pembahasan:**
-
-**Kendala:**
 **Pembahasan:**  
 - filter: fftp.request.command == RETR  
 	![step1](/screenshots/8-1.png)  
 
 **Kendala:** Sempat bingung dengan soal dan filter yang harus digunakan, jadi untuk praktikum kami menggunakan ftp.request.command == STOR untuk filternya.
 ## Soal 9
-Dari paket-paket yang menuju FTP terdapat inidkasi penyimpanan beberapa file. Salah satunya adalah sebuah file berisi data rahasia dengan nama "secret.zip". Simpan dan buka file tersebut!
+Dari paket-paket yang menuju FTP terdapat inidkasi penyimpanan beberapa file. Salah satunya adalah sebuah file berisi data rahasia dengan nama "secret.zip". Simpan dan buka file tersebut!  
 
-**Pembahasan:**
 **Pembahasan:**  
 - filter: ftp-data  
 	![step1](/screenshots/9-1.png)  
@@ -63,11 +67,10 @@ Dari paket-paket yang menuju FTP terdapat inidkasi penyimpanan beberapa file. Sa
 	![step2](/screenshots/9-2.png)  
 	![step3](/screenshots/9-3.png)  
 - Isi secret.zip: file Wanted.pdf yang dilindungi password
-	![step1](/screenshots/9-4.png)  
+	![isi-zip](/screenshots/9-4.png)  
 
-**Kendala:**
+**Kendala:** -
 ## Soal 10
-Selain itu terdapat "history.txt" yang kemungkinan berisi history bash server tersebut! Gunakan isi dari "history.txt" untuk menemukan password untuk membuka file rahasia yang ada di "secret.zip"!
 Selain itu terdapat "history.txt" yang kemungkinan berisi history bash server tersebut! Gunakan isi dari "history.txt" untuk menemukan password untuk membuka file rahasia yang ada di "secret.zip"!  
 
 **Pembahasan:**  
@@ -77,15 +80,12 @@ Selain itu terdapat "history.txt" yang kemungkinan berisi history bash server te
 	![step2](/screenshots/10-2.png)  
 - filter: ftp-data.command contains "bukanapaapa.txt", untuk menemukan 'bukanapaapa.txt'
 	![step3](/screenshots/10-3.png)  
-- Klik kanan > Follow > TCP Stream, berisi 'd1b1langbukanapaapajugagapercaya' yang digunakan untuk membuka 'Wanted.pdf'
+- Klik kanan > Follow > TCP Stream, berisi 'd1b1langbukanapaapajugagapercaya' yang digunakan untuk membuka 'Wanted.pdf'  
 	![step4](/screenshots/10-4.png)  
 	![step5](/screenshots/10-5.png)  
 - Isi 'Wanted.pdf'  
-	![step6](/screenshots/10-6.png)  
+	![isi-pdf](/screenshots/10-6.png)  
 
-**Pembahasan:**
-
-**Kendala:**
 **Kendala:** -
 ## Soal 11
 Filter sehingga wireshark hanya mengambil paket yang berasal dari port 80! 
