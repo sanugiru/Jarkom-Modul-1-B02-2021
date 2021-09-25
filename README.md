@@ -79,29 +79,59 @@ Selain itu terdapat "history.txt" yang kemungkinan berisi history bash server te
 Filter sehingga wireshark hanya mengambil paket yang berasal dari port 80! 
 
 **Pembahasan:**
+- Pertama-tama, masukkan `src port 80` pada capture filter
+![111](/screenshots/11_1.png)
+- Lalu berikut hasilnya
+![112](/screenshots/11_2.png)
 
 **Kendala:**
+Perlu mencari referensi tambahan terkait port 80
 ## Soal 12
 Filter sehingga wireshark hanya mengambil paket yang mengandung port 21!
 
 **Pembahasan:**
+- Pertama-tama, masukkan `port 21` pada capture filter
+![121](/screenshots/12_1.png)
+- Lalu berikut hasilnya
+![122](/screenshots/12_2.png)
+
+*Note : Tidak ada paket yang ditampilkan karena port 21 adalah private server.*
 
 **Kendala:**
+Perlu mencari referensi tambahan terkait port 21
 ## Soal 13
 Filter sehingga wireshark hanya menampilkan paket yang menuju port 443!
 
 **Pembahasan:**
+- Pertama-tama, masukkan `dst port 443` pada capture filter
+![131](/screenshots/13_1.png)
+- Lalu berikut hasilnya
+![132](/screenshots/13_2.png)
 
 **Kendala:**
+Perlu mencari referensi tambahan terkait port 443
 ## Soal 14
 Filter sehingga wireshark hanya mengambil paket yang tujuannya ke [kemenag.go.id](https://www.kemenag.go.id)!
 
 **Pembahasan:**
+- Pertama-tama, masukkan `dst host kemenag.go.id` pada capture filter
+![141](/screenshots/14_1.png)
+- Lalu berikut hasilnya
+![142](/screenshots/14_2.png)
 
 **Kendala:**
+Tidak ada
 ## Soal 15
 Filter sehingga wireshark hanya mengambil paket yang berasal dari ip kalian!
 
 **Pembahasan:**
+- Pertama-tama, kita cari IP kita sendiri denan command `ipconfig` pada `cmd`
+![151](/screenshots/15_1.png)
+didapat ip kita disini `192.168.100.34`
+- Kemudian, masukkan `src host 192.168.100.34` pada capture filter
+![152](/screenshots/15_2.png)
+- Lalu berikut hasilnya
+![153](/screenshots/15_3.png)
 
 **Kendala:**
+Tidak ada
